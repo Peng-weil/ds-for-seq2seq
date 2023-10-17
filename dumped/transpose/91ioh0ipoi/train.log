@@ -1,0 +1,1081 @@
+INFO - 07/28/23 16:32:57 - 0:00:00 - ============ Initialized logger ============
+INFO - 07/28/23 16:32:57 - 0:00:00 - attention_dropout: 0
+                                     batch_size: 16
+                                     clip_grad_norm: 5
+                                     command: python main.py --emb_dim 256 --n_enc_layers 6 --n_dec_layers 6 --n_heads 8 --sort_method 'SMC,SMC' --exp_id "91ioh0ipoi"
+                                     cpu: False
+                                     dropout: 0
+                                     dump_path: ./dumped/transpose/91ioh0ipoi
+                                     emb_dim: 256
+                                     env_base_seed: 0
+                                     exp_id: 91ioh0ipoi
+                                     exp_name: transpose
+                                     max_epoch: 10000
+                                     n_dec_layers: 6
+                                     n_enc_layers: 6
+                                     n_heads: 8
+                                     num_workers: 0
+                                     reload_checkpoint: 
+                                     reload_data: /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_20_20_vd45x
+                                     reload_model: 
+                                     reload_size: -1
+                                     reload_testset: {'rank_20_20': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_20_20_vd45x', 'rank_19_19': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_19_19_mxyni', 'rank_18_18': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_18_18_jtkz0', 'rank_17_17': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_17_17_v6nyk', 'rank_16_16': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_16_16_6xari', 'rank_15_15': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_15_15_agwcw', 'rank_14_14': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_14_14_48kuw', 'rank_13_13': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_13_13_gfemn', 'rank_12_12': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_12_12_sv30k', 'rank_11_11': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_11_11_l6jao', 'rank_10_10': '/public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_10_10_vtbu7'}
+                                     share_inout_emb: True
+                                     sinusoidal_embeddings: False
+                                     sort_method: SMC,SMC
+                                     stopping_criterion_acc: 50
+INFO - 07/28/23 16:32:57 - 0:00:00 - The experiment will be stored in ./dumped/transpose/91ioh0ipoi
+                                     
+INFO - 07/28/23 16:32:57 - 0:00:00 - Running command: python main.py --emb_dim 256 --n_enc_layers 6 --n_dec_layers 6 --n_heads 8 --sort_method 'SMC,SMC'
+
+INFO - 07/28/23 16:32:57 - 0:00:00 - device is cuda
+INFO - 07/28/23 16:32:57 - 0:00:00 - word2id: {'<s>': 0, '</s>': 1, '<pad>': 2, '0': 3, '1': 4, '2': 5, '3': 6, '4': 7, '5': 8, '6': 9, '7': 10, '8': 11, '9': 12}
+INFO - 07/28/23 16:32:57 - 0:00:00 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_20_20_vd45x ...
+INFO - 07/28/23 16:32:57 - 0:00:00 - Loaded 1000 data from the disk.
+DEBUG - 07/28/23 16:32:57 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(4096, 256)
+                                        (embeddings): Embedding(13, 256, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (1): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (2): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (3): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (4): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (5): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(4096, 256)
+                                        (embeddings): Embedding(13, 256, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (1): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (2): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (3): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (4): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (5): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      )
+DEBUG - 07/28/23 16:32:57 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(4096, 256)
+                                        (embeddings): Embedding(13, 256, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (1): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (2): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (3): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (4): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (5): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=256, out_features=13, bias=True)
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(4096, 256)
+                                        (embeddings): Embedding(13, 256, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (1): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (2): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (3): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (4): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                          (5): TransformerFFN(
+                                            (lin1): Linear(in_features=256, out_features=1024, bias=True)
+                                            (lin2): Linear(in_features=1024, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (k_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (v_lin): Linear(in_features=256, out_features=256, bias=True)
+                                            (out_lin): Linear(in_features=256, out_features=256, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=256, out_features=13, bias=True)
+                                      )
+INFO - 07/28/23 16:32:57 - 0:00:00 - Number of parameters (encoder): 5790976
+INFO - 07/28/23 16:32:57 - 0:00:00 - Number of parameters (decoder): 7373069
+INFO - 07/28/23 16:33:01 - 0:00:04 - Found 261 parameters in model.
+INFO - 07/28/23 16:33:01 - 0:00:04 - 
+                                     ============ Starting epoch 0 ... ============
+INFO - 07/28/23 16:33:06 - 0:00:09 -      20 -  cross_entropy: 2.33 LR: 1.0000e-04
+INFO - 07/28/23 16:33:10 - 0:00:13 -      40 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:12 - 0:00:15 - ****************Test of epoch 0 :****************
+INFO - 07/28/23 16:33:15 - 0:00:18 - trainset   - xe_loss: 930.4916966342926, acc_single:9.97 %, acc_total: 0.00 %
+INFO - 07/28/23 16:33:16 - 0:00:19 - testset    - xe_loss: 930.2543531990051, acc_single:10.14 %, acc_total: 0.00 %
+INFO - 07/28/23 16:33:16 - 0:00:19 - Best "test_total_acc" update for: 0.00 %
+INFO - 07/28/23 16:33:16 - 0:00:19 - Saving the best model in ./dumped/transpose/91ioh0ipoi/best_total_acc.pth
+INFO - 07/28/23 16:33:16 - 0:00:19 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch0.pth
+INFO - 07/28/23 16:33:17 - 0:00:20 - ============ End of epoch 0 ============
+INFO - 07/28/23 16:33:17 - 0:00:20 - 
+                                     ============ Starting epoch 1 ... ============
+INFO - 07/28/23 16:33:19 - 0:00:22 -      60 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:23 - 0:00:26 -      80 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:27 - 0:00:30 -     100 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:27 - 0:00:30 - ****************Test of epoch 1 :****************
+INFO - 07/28/23 16:33:30 - 0:00:33 - trainset   - xe_loss: 929.4461204624176, acc_single:9.95 %, acc_total: 0.00 %
+INFO - 07/28/23 16:33:31 - 0:00:34 - testset    - xe_loss: 929.4257296466827, acc_single:9.93 %, acc_total: 0.00 %
+INFO - 07/28/23 16:33:31 - 0:00:34 - No better "test_total_acc" has been achieved for 1 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:33:31 - 0:00:34 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch1.pth
+INFO - 07/28/23 16:33:31 - 0:00:34 - ============ End of epoch 1 ============
+INFO - 07/28/23 16:33:31 - 0:00:34 - 
+                                     ============ Starting epoch 2 ... ============
+INFO - 07/28/23 16:33:36 - 0:00:39 -     120 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:40 - 0:00:43 -     140 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:42 - 0:00:45 - ****************Test of epoch 2 :****************
+INFO - 07/28/23 16:33:45 - 0:00:48 - trainset   - xe_loss: 928.7271300506592, acc_single:9.93 %, acc_total: 0.00 %
+INFO - 07/28/23 16:33:45 - 0:00:48 - testset    - xe_loss: 928.6663056087494, acc_single:10.13 %, acc_total: 0.00 %
+INFO - 07/28/23 16:33:45 - 0:00:48 - No better "test_total_acc" has been achieved for 2 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:33:45 - 0:00:48 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch2.pth
+INFO - 07/28/23 16:33:46 - 0:00:49 - ============ End of epoch 2 ============
+INFO - 07/28/23 16:33:46 - 0:00:49 - 
+                                     ============ Starting epoch 3 ... ============
+INFO - 07/28/23 16:33:48 - 0:00:51 -     160 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:53 - 0:00:56 -     180 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:57 - 0:01:00 -     200 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:33:57 - 0:01:00 - ****************Test of epoch 3 :****************
+INFO - 07/28/23 16:34:00 - 0:01:03 - trainset   - xe_loss: 928.5729216384888, acc_single:10.05 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:00 - 0:01:03 - testset    - xe_loss: 928.5401135349274, acc_single:10.05 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:00 - 0:01:03 - No better "test_total_acc" has been achieved for 3 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:34:00 - 0:01:03 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch3.pth
+INFO - 07/28/23 16:34:01 - 0:01:04 - ============ End of epoch 3 ============
+INFO - 07/28/23 16:34:01 - 0:01:04 - 
+                                     ============ Starting epoch 4 ... ============
+INFO - 07/28/23 16:34:05 - 0:01:08 -     220 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:10 - 0:01:13 -     240 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:12 - 0:01:15 - ****************Test of epoch 4 :****************
+INFO - 07/28/23 16:34:15 - 0:01:18 - trainset   - xe_loss: 928.9126168727875, acc_single:9.95 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:16 - 0:01:18 - testset    - xe_loss: 928.7256921386719, acc_single:10.10 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:16 - 0:01:18 - No better "test_total_acc" has been achieved for 4 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:34:16 - 0:01:18 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch4.pth
+INFO - 07/28/23 16:34:16 - 0:01:19 - ============ End of epoch 4 ============
+INFO - 07/28/23 16:34:16 - 0:01:19 - 
+                                     ============ Starting epoch 5 ... ============
+INFO - 07/28/23 16:34:18 - 0:01:21 -     260 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:22 - 0:01:25 -     280 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:27 - 0:01:30 -     300 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:27 - 0:01:30 - ****************Test of epoch 5 :****************
+INFO - 07/28/23 16:34:29 - 0:01:32 - trainset   - xe_loss: 928.6890942192077, acc_single:10.03 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:30 - 0:01:33 - testset    - xe_loss: 928.7755601501465, acc_single:9.86 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:30 - 0:01:33 - No better "test_total_acc" has been achieved for 5 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:34:30 - 0:01:33 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch5.pth
+INFO - 07/28/23 16:34:31 - 0:01:34 - ============ End of epoch 5 ============
+INFO - 07/28/23 16:34:31 - 0:01:34 - 
+                                     ============ Starting epoch 6 ... ============
+INFO - 07/28/23 16:34:35 - 0:01:38 -     320 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:39 - 0:01:42 -     340 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:41 - 0:01:44 - ****************Test of epoch 6 :****************
+INFO - 07/28/23 16:34:44 - 0:01:47 - trainset   - xe_loss: 928.3596479320527, acc_single:10.00 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:45 - 0:01:48 - testset    - xe_loss: 928.3113325595856, acc_single:9.99 %, acc_total: 0.00 %
+INFO - 07/28/23 16:34:45 - 0:01:48 - No better "test_total_acc" has been achieved for 6 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:34:45 - 0:01:48 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch6.pth
+INFO - 07/28/23 16:34:45 - 0:01:48 - ============ End of epoch 6 ============
+INFO - 07/28/23 16:34:45 - 0:01:48 - 
+                                     ============ Starting epoch 7 ... ============
+INFO - 07/28/23 16:34:47 - 0:01:50 -     360 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:52 - 0:01:55 -     380 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:56 - 0:01:59 -     400 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:34:56 - 0:01:59 - ****************Test of epoch 7 :****************
+INFO - 07/28/23 16:34:59 - 0:02:02 - trainset   - xe_loss: 928.6278797054291, acc_single:10.24 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:00 - 0:02:02 - testset    - xe_loss: 928.6708335018158, acc_single:10.22 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:00 - 0:02:02 - No better "test_total_acc" has been achieved for 7 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:35:00 - 0:02:02 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch7.pth
+INFO - 07/28/23 16:35:00 - 0:02:03 - ============ End of epoch 7 ============
+INFO - 07/28/23 16:35:00 - 0:02:03 - 
+                                     ============ Starting epoch 8 ... ============
+INFO - 07/28/23 16:35:05 - 0:02:07 -     420 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:09 - 0:02:12 -     440 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:11 - 0:02:14 - ****************Test of epoch 8 :****************
+INFO - 07/28/23 16:35:14 - 0:02:17 - trainset   - xe_loss: 928.2311001300811, acc_single:10.48 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:15 - 0:02:18 - testset    - xe_loss: 928.2932630538941, acc_single:10.37 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:15 - 0:02:18 - No better "test_total_acc" has been achieved for 8 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:35:15 - 0:02:18 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch8.pth
+INFO - 07/28/23 16:35:15 - 0:02:18 - ============ End of epoch 8 ============
+INFO - 07/28/23 16:35:15 - 0:02:18 - 
+                                     ============ Starting epoch 9 ... ============
+INFO - 07/28/23 16:35:17 - 0:02:20 -     460 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:22 - 0:02:24 -     480 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:26 - 0:02:29 -     500 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:26 - 0:02:29 - ****************Test of epoch 9 :****************
+INFO - 07/28/23 16:35:28 - 0:02:31 - trainset   - xe_loss: 928.5565194988251, acc_single:10.53 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:29 - 0:02:32 - testset    - xe_loss: 928.5919357299805, acc_single:10.58 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:29 - 0:02:32 - No better "test_total_acc" has been achieved for 9 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:35:29 - 0:02:32 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch9.pth
+INFO - 07/28/23 16:35:30 - 0:02:33 - ============ End of epoch 9 ============
+INFO - 07/28/23 16:35:30 - 0:02:33 - 
+                                     ============ Starting epoch 10 ... ============
+INFO - 07/28/23 16:35:34 - 0:02:37 -     520 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:35:38 - 0:02:41 -     540 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:41 - 0:02:44 - ****************Test of epoch 10 :****************
+INFO - 07/28/23 16:35:43 - 0:02:46 - trainset   - xe_loss: 928.2433491516114, acc_single:10.17 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:44 - 0:02:47 - testset    - xe_loss: 928.2742489624023, acc_single:9.91 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:44 - 0:02:47 - No better "test_total_acc" has been achieved for 10 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:35:44 - 0:02:47 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch10.pth
+INFO - 07/28/23 16:35:45 - 0:02:48 - ============ End of epoch 10 ============
+INFO - 07/28/23 16:35:45 - 0:02:48 - 
+                                     ============ Starting epoch 11 ... ============
+INFO - 07/28/23 16:35:47 - 0:02:50 -     560 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:35:51 - 0:02:54 -     580 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:35:56 - 0:02:59 -     600 -  cross_entropy: 2.32 LR: 1.0000e-04
+INFO - 07/28/23 16:35:56 - 0:02:59 - ****************Test of epoch 11 :****************
+INFO - 07/28/23 16:35:58 - 0:03:01 - trainset   - xe_loss: 928.2407677936554, acc_single:10.43 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:59 - 0:03:02 - testset    - xe_loss: 928.3035005283356, acc_single:10.51 %, acc_total: 0.00 %
+INFO - 07/28/23 16:35:59 - 0:03:02 - No better "test_total_acc" has been achieved for 11 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:35:59 - 0:03:02 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch11.pth
+INFO - 07/28/23 16:36:00 - 0:03:03 - ============ End of epoch 11 ============
+INFO - 07/28/23 16:36:00 - 0:03:03 - 
+                                     ============ Starting epoch 12 ... ============
+INFO - 07/28/23 16:36:04 - 0:03:07 -     620 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:09 - 0:03:11 -     640 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:11 - 0:03:14 - ****************Test of epoch 12 :****************
+INFO - 07/28/23 16:36:13 - 0:03:16 - trainset   - xe_loss: 927.1817762088775, acc_single:11.17 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:14 - 0:03:17 - testset    - xe_loss: 927.0582802200317, acc_single:11.31 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:14 - 0:03:17 - No better "test_total_acc" has been achieved for 12 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:36:14 - 0:03:17 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch12.pth
+INFO - 07/28/23 16:36:15 - 0:03:18 - ============ End of epoch 12 ============
+INFO - 07/28/23 16:36:15 - 0:03:18 - 
+                                     ============ Starting epoch 13 ... ============
+INFO - 07/28/23 16:36:17 - 0:03:20 -     660 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:21 - 0:03:24 -     680 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:25 - 0:03:28 -     700 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:25 - 0:03:28 - ****************Test of epoch 13 :****************
+INFO - 07/28/23 16:36:28 - 0:03:31 - trainset   - xe_loss: 926.3718875789642, acc_single:11.33 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:29 - 0:03:32 - testset    - xe_loss: 926.3529882144928, acc_single:11.38 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:29 - 0:03:32 - No better "test_total_acc" has been achieved for 13 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:36:29 - 0:03:32 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch13.pth
+INFO - 07/28/23 16:36:30 - 0:03:32 - ============ End of epoch 13 ============
+INFO - 07/28/23 16:36:30 - 0:03:32 - 
+                                     ============ Starting epoch 14 ... ============
+INFO - 07/28/23 16:36:34 - 0:03:37 -     720 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:38 - 0:03:41 -     740 -  cross_entropy: 2.31 LR: 1.0000e-04
+INFO - 07/28/23 16:36:40 - 0:03:43 - ****************Test of epoch 14 :****************
+INFO - 07/28/23 16:36:43 - 0:03:46 - trainset   - xe_loss: 924.7468099308014, acc_single:11.90 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:44 - 0:03:46 - testset    - xe_loss: 924.8343428230286, acc_single:11.76 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:44 - 0:03:46 - No better "test_total_acc" has been achieved for 14 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:36:44 - 0:03:46 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch14.pth
+INFO - 07/28/23 16:36:44 - 0:03:47 - ============ End of epoch 14 ============
+INFO - 07/28/23 16:36:44 - 0:03:47 - 
+                                     ============ Starting epoch 15 ... ============
+INFO - 07/28/23 16:36:46 - 0:03:49 -     760 -  cross_entropy: 2.30 LR: 1.0000e-04
+INFO - 07/28/23 16:36:51 - 0:03:54 -     780 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:36:55 - 0:03:58 -     800 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:36:55 - 0:03:58 - ****************Test of epoch 15 :****************
+INFO - 07/28/23 16:36:58 - 0:04:01 - trainset   - xe_loss: 917.6046322536469, acc_single:12.16 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:58 - 0:04:01 - testset    - xe_loss: 917.6504848194122, acc_single:12.13 %, acc_total: 0.00 %
+INFO - 07/28/23 16:36:58 - 0:04:01 - No better "test_total_acc" has been achieved for 15 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:36:58 - 0:04:01 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch15.pth
+INFO - 07/28/23 16:36:59 - 0:04:02 - ============ End of epoch 15 ============
+INFO - 07/28/23 16:36:59 - 0:04:02 - 
+                                     ============ Starting epoch 16 ... ============
+INFO - 07/28/23 16:37:03 - 0:04:06 -     820 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:08 - 0:04:10 -     840 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:10 - 0:04:13 - ****************Test of epoch 16 :****************
+INFO - 07/28/23 16:37:12 - 0:04:15 - trainset   - xe_loss: 916.7447838306427, acc_single:12.46 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:13 - 0:04:16 - testset    - xe_loss: 916.7567383861542, acc_single:12.49 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:13 - 0:04:16 - No better "test_total_acc" has been achieved for 16 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:37:13 - 0:04:16 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch16.pth
+INFO - 07/28/23 16:37:14 - 0:04:17 - ============ End of epoch 16 ============
+INFO - 07/28/23 16:37:14 - 0:04:17 - 
+                                     ============ Starting epoch 17 ... ============
+INFO - 07/28/23 16:37:16 - 0:04:19 -     860 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:20 - 0:04:23 -     880 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:24 - 0:04:27 -     900 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:24 - 0:04:27 - ****************Test of epoch 17 :****************
+INFO - 07/28/23 16:37:27 - 0:04:30 - trainset   - xe_loss: 916.519490556717, acc_single:12.52 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:28 - 0:04:31 - testset    - xe_loss: 916.5865561485291, acc_single:12.46 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:28 - 0:04:31 - No better "test_total_acc" has been achieved for 17 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:37:28 - 0:04:31 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch17.pth
+INFO - 07/28/23 16:37:29 - 0:04:31 - ============ End of epoch 17 ============
+INFO - 07/28/23 16:37:29 - 0:04:31 - 
+                                     ============ Starting epoch 18 ... ============
+INFO - 07/28/23 16:37:33 - 0:04:36 -     920 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:37 - 0:04:40 -     940 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:39 - 0:04:42 - ****************Test of epoch 18 :****************
+INFO - 07/28/23 16:37:42 - 0:04:45 - trainset   - xe_loss: 916.3204200553894, acc_single:12.54 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:43 - 0:04:46 - testset    - xe_loss: 916.5665707015992, acc_single:12.55 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:43 - 0:04:46 - No better "test_total_acc" has been achieved for 18 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:37:43 - 0:04:46 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch18.pth
+INFO - 07/28/23 16:37:43 - 0:04:46 - ============ End of epoch 18 ============
+INFO - 07/28/23 16:37:43 - 0:04:46 - 
+                                     ============ Starting epoch 19 ... ============
+INFO - 07/28/23 16:37:46 - 0:04:49 -     960 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:37:50 - 0:04:53 -     980 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:37:54 - 0:04:57 -    1000 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:37:54 - 0:04:57 - ****************Test of epoch 19 :****************
+INFO - 07/28/23 16:37:57 - 0:05:00 - trainset   - xe_loss: 915.8832795143128, acc_single:12.68 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:58 - 0:05:01 - testset    - xe_loss: 916.6451128196717, acc_single:12.54 %, acc_total: 0.00 %
+INFO - 07/28/23 16:37:58 - 0:05:01 - No better "test_total_acc" has been achieved for 19 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:37:58 - 0:05:01 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch19.pth
+INFO - 07/28/23 16:37:58 - 0:05:01 - ============ End of epoch 19 ============
+INFO - 07/28/23 16:37:58 - 0:05:01 - 
+                                     ============ Starting epoch 20 ... ============
+INFO - 07/28/23 16:38:03 - 0:05:05 -    1020 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:38:07 - 0:05:10 -    1040 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:09 - 0:05:12 - ****************Test of epoch 20 :****************
+INFO - 07/28/23 16:38:12 - 0:05:15 - trainset   - xe_loss: 915.4108871841431, acc_single:12.85 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:13 - 0:05:16 - testset    - xe_loss: 916.7796684932708, acc_single:12.55 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:13 - 0:05:16 - No better "test_total_acc" has been achieved for 20 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:38:13 - 0:05:16 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch20.pth
+INFO - 07/28/23 16:38:13 - 0:05:16 - ============ End of epoch 20 ============
+INFO - 07/28/23 16:38:13 - 0:05:16 - 
+                                     ============ Starting epoch 21 ... ============
+INFO - 07/28/23 16:38:16 - 0:05:18 -    1060 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:20 - 0:05:23 -    1080 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:24 - 0:05:27 -    1100 -  cross_entropy: 2.29 LR: 1.0000e-04
+INFO - 07/28/23 16:38:24 - 0:05:27 - ****************Test of epoch 21 :****************
+INFO - 07/28/23 16:38:27 - 0:05:30 - trainset   - xe_loss: 914.6531113910675, acc_single:13.15 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:28 - 0:05:30 - testset    - xe_loss: 916.8798596000671, acc_single:12.50 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:28 - 0:05:30 - No better "test_total_acc" has been achieved for 21 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:38:28 - 0:05:30 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch21.pth
+INFO - 07/28/23 16:38:28 - 0:05:31 - ============ End of epoch 21 ============
+INFO - 07/28/23 16:38:28 - 0:05:31 - 
+                                     ============ Starting epoch 22 ... ============
+INFO - 07/28/23 16:38:33 - 0:05:36 -    1120 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:37 - 0:05:40 -    1140 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:39 - 0:05:42 - ****************Test of epoch 22 :****************
+INFO - 07/28/23 16:38:42 - 0:05:45 - trainset   - xe_loss: 913.6213330554962, acc_single:13.37 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:43 - 0:05:46 - testset    - xe_loss: 917.5091679000855, acc_single:12.42 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:43 - 0:05:46 - No better "test_total_acc" has been achieved for 22 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:38:43 - 0:05:46 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch22.pth
+INFO - 07/28/23 16:38:43 - 0:05:46 - ============ End of epoch 22 ============
+INFO - 07/28/23 16:38:43 - 0:05:46 - 
+                                     ============ Starting epoch 23 ... ============
+INFO - 07/28/23 16:38:45 - 0:05:48 -    1160 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:50 - 0:05:53 -    1180 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:54 - 0:05:57 -    1200 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:38:54 - 0:05:57 - ****************Test of epoch 23 :****************
+INFO - 07/28/23 16:38:57 - 0:06:00 - trainset   - xe_loss: 912.7246916770935, acc_single:13.61 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:58 - 0:06:00 - testset    - xe_loss: 917.6320252418518, acc_single:12.44 %, acc_total: 0.00 %
+INFO - 07/28/23 16:38:58 - 0:06:00 - No better "test_total_acc" has been achieved for 23 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:38:58 - 0:06:00 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch23.pth
+INFO - 07/28/23 16:38:58 - 0:06:01 - ============ End of epoch 23 ============
+INFO - 07/28/23 16:38:58 - 0:06:01 - 
+                                     ============ Starting epoch 24 ... ============
+INFO - 07/28/23 16:39:03 - 0:06:05 -    1220 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:39:07 - 0:06:10 -    1240 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:39:09 - 0:06:12 - ****************Test of epoch 24 :****************
+INFO - 07/28/23 16:39:12 - 0:06:15 - trainset   - xe_loss: 911.9919340229035, acc_single:13.77 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:13 - 0:06:16 - testset    - xe_loss: 918.007618560791, acc_single:12.38 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:13 - 0:06:16 - No better "test_total_acc" has been achieved for 24 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:39:13 - 0:06:16 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch24.pth
+INFO - 07/28/23 16:39:13 - 0:06:16 - ============ End of epoch 24 ============
+INFO - 07/28/23 16:39:13 - 0:06:16 - 
+                                     ============ Starting epoch 25 ... ============
+INFO - 07/28/23 16:39:15 - 0:06:18 -    1260 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:39:20 - 0:06:23 -    1280 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:39:24 - 0:06:27 -    1300 -  cross_entropy: 2.28 LR: 1.0000e-04
+INFO - 07/28/23 16:39:24 - 0:06:27 - ****************Test of epoch 25 :****************
+INFO - 07/28/23 16:39:27 - 0:06:30 - trainset   - xe_loss: 910.8016144180298, acc_single:14.00 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:28 - 0:06:31 - testset    - xe_loss: 917.7643360900879, acc_single:12.62 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:28 - 0:06:31 - No better "test_total_acc" has been achieved for 25 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:39:28 - 0:06:31 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch25.pth
+INFO - 07/28/23 16:39:28 - 0:06:31 - ============ End of epoch 25 ============
+INFO - 07/28/23 16:39:28 - 0:06:31 - 
+                                     ============ Starting epoch 26 ... ============
+INFO - 07/28/23 16:39:33 - 0:06:36 -    1320 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:39:37 - 0:06:40 -    1340 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:39:39 - 0:06:42 - ****************Test of epoch 26 :****************
+INFO - 07/28/23 16:39:42 - 0:06:45 - trainset   - xe_loss: 909.5254713535309, acc_single:14.37 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:43 - 0:06:46 - testset    - xe_loss: 918.7258632469177, acc_single:12.53 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:43 - 0:06:46 - No better "test_total_acc" has been achieved for 26 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:39:43 - 0:06:46 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch26.pth
+INFO - 07/28/23 16:39:43 - 0:06:46 - ============ End of epoch 26 ============
+INFO - 07/28/23 16:39:43 - 0:06:46 - 
+                                     ============ Starting epoch 27 ... ============
+INFO - 07/28/23 16:39:46 - 0:06:49 -    1360 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:39:50 - 0:06:53 -    1380 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:39:54 - 0:06:57 -    1400 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:39:54 - 0:06:57 - ****************Test of epoch 27 :****************
+INFO - 07/28/23 16:39:57 - 0:07:00 - trainset   - xe_loss: 907.5380590057373, acc_single:14.72 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:58 - 0:07:01 - testset    - xe_loss: 919.255485239029, acc_single:12.28 %, acc_total: 0.00 %
+INFO - 07/28/23 16:39:58 - 0:07:01 - No better "test_total_acc" has been achieved for 27 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:39:58 - 0:07:01 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch27.pth
+INFO - 07/28/23 16:39:59 - 0:07:01 - ============ End of epoch 27 ============
+INFO - 07/28/23 16:39:59 - 0:07:01 - 
+                                     ============ Starting epoch 28 ... ============
+INFO - 07/28/23 16:40:03 - 0:07:06 -    1420 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:40:07 - 0:07:10 -    1440 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:40:09 - 0:07:12 - ****************Test of epoch 28 :****************
+INFO - 07/28/23 16:40:12 - 0:07:15 - trainset   - xe_loss: 906.491454114914, acc_single:14.86 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:13 - 0:07:16 - testset    - xe_loss: 919.9395450973511, acc_single:12.32 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:13 - 0:07:16 - No better "test_total_acc" has been achieved for 28 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:40:13 - 0:07:16 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch28.pth
+INFO - 07/28/23 16:40:13 - 0:07:16 - ============ End of epoch 28 ============
+INFO - 07/28/23 16:40:13 - 0:07:16 - 
+                                     ============ Starting epoch 29 ... ============
+INFO - 07/28/23 16:40:16 - 0:07:19 -    1460 -  cross_entropy: 2.26 LR: 1.0000e-04
+INFO - 07/28/23 16:40:20 - 0:07:23 -    1480 -  cross_entropy: 2.26 LR: 1.0000e-04
+INFO - 07/28/23 16:40:24 - 0:07:27 -    1500 -  cross_entropy: 2.27 LR: 1.0000e-04
+INFO - 07/28/23 16:40:24 - 0:07:27 - ****************Test of epoch 29 :****************
+INFO - 07/28/23 16:40:27 - 0:07:30 - trainset   - xe_loss: 904.2460398197175, acc_single:15.44 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:28 - 0:07:31 - testset    - xe_loss: 918.5198058700562, acc_single:12.59 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:28 - 0:07:31 - No better "test_total_acc" has been achieved for 29 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:40:28 - 0:07:31 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch29.pth
+INFO - 07/28/23 16:40:28 - 0:07:31 - ============ End of epoch 29 ============
+INFO - 07/28/23 16:40:28 - 0:07:31 - 
+                                     ============ Starting epoch 30 ... ============
+INFO - 07/28/23 16:40:33 - 0:07:36 -    1520 -  cross_entropy: 2.26 LR: 1.0000e-04
+INFO - 07/28/23 16:40:37 - 0:07:40 -    1540 -  cross_entropy: 2.26 LR: 1.0000e-04
+INFO - 07/28/23 16:40:40 - 0:07:43 - ****************Test of epoch 30 :****************
+INFO - 07/28/23 16:40:42 - 0:07:45 - trainset   - xe_loss: 900.8860601711273, acc_single:16.00 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:43 - 0:07:46 - testset    - xe_loss: 921.8699840068817, acc_single:12.31 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:43 - 0:07:46 - No better "test_total_acc" has been achieved for 30 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:40:43 - 0:07:46 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch30.pth
+INFO - 07/28/23 16:40:44 - 0:07:47 - ============ End of epoch 30 ============
+INFO - 07/28/23 16:40:44 - 0:07:47 - 
+                                     ============ Starting epoch 31 ... ============
+INFO - 07/28/23 16:40:46 - 0:07:49 -    1560 -  cross_entropy: 2.25 LR: 1.0000e-04
+INFO - 07/28/23 16:40:50 - 0:07:53 -    1580 -  cross_entropy: 2.25 LR: 1.0000e-04
+INFO - 07/28/23 16:40:54 - 0:07:57 -    1600 -  cross_entropy: 2.26 LR: 1.0000e-04
+INFO - 07/28/23 16:40:54 - 0:07:57 - ****************Test of epoch 31 :****************
+INFO - 07/28/23 16:40:57 - 0:08:00 - trainset   - xe_loss: 898.0517291355133, acc_single:16.50 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:58 - 0:08:01 - testset    - xe_loss: 921.3965820789338, acc_single:12.50 %, acc_total: 0.00 %
+INFO - 07/28/23 16:40:58 - 0:08:01 - No better "test_total_acc" has been achieved for 31 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:40:58 - 0:08:01 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch31.pth
+INFO - 07/28/23 16:40:58 - 0:08:01 - ============ End of epoch 31 ============
+INFO - 07/28/23 16:40:58 - 0:08:01 - 
+                                     ============ Starting epoch 32 ... ============
+INFO - 07/28/23 16:41:03 - 0:08:06 -    1620 -  cross_entropy: 2.25 LR: 1.0000e-04
+INFO - 07/28/23 16:41:07 - 0:08:10 -    1640 -  cross_entropy: 2.25 LR: 1.0000e-04
+INFO - 07/28/23 16:41:09 - 0:08:12 - ****************Test of epoch 32 :****************
+INFO - 07/28/23 16:41:12 - 0:08:15 - trainset   - xe_loss: 896.540453042984, acc_single:16.65 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:13 - 0:08:15 - testset    - xe_loss: 923.5065190601349, acc_single:12.31 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:13 - 0:08:15 - No better "test_total_acc" has been achieved for 32 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:41:13 - 0:08:15 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch32.pth
+INFO - 07/28/23 16:41:13 - 0:08:16 - ============ End of epoch 32 ============
+INFO - 07/28/23 16:41:13 - 0:08:16 - 
+                                     ============ Starting epoch 33 ... ============
+INFO - 07/28/23 16:41:15 - 0:08:18 -    1660 -  cross_entropy: 2.24 LR: 1.0000e-04
+INFO - 07/28/23 16:41:19 - 0:08:22 -    1680 -  cross_entropy: 2.24 LR: 1.0000e-04
+INFO - 07/28/23 16:41:24 - 0:08:27 -    1700 -  cross_entropy: 2.24 LR: 1.0000e-04
+INFO - 07/28/23 16:41:24 - 0:08:27 - ****************Test of epoch 33 :****************
+INFO - 07/28/23 16:41:26 - 0:08:29 - trainset   - xe_loss: 894.1630644321442, acc_single:16.96 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:27 - 0:08:30 - testset    - xe_loss: 927.633139076233, acc_single:12.14 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:27 - 0:08:30 - No better "test_total_acc" has been achieved for 33 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:41:27 - 0:08:30 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch33.pth
+INFO - 07/28/23 16:41:28 - 0:08:31 - ============ End of epoch 33 ============
+INFO - 07/28/23 16:41:28 - 0:08:31 - 
+                                     ============ Starting epoch 34 ... ============
+INFO - 07/28/23 16:41:32 - 0:08:35 -    1720 -  cross_entropy: 2.23 LR: 1.0000e-04
+INFO - 07/28/23 16:41:36 - 0:08:39 -    1740 -  cross_entropy: 2.24 LR: 1.0000e-04
+INFO - 07/28/23 16:41:38 - 0:08:41 - ****************Test of epoch 34 :****************
+INFO - 07/28/23 16:41:41 - 0:08:44 - trainset   - xe_loss: 892.0555596637726, acc_single:17.42 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:42 - 0:08:45 - testset    - xe_loss: 928.7364726543426, acc_single:12.08 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:42 - 0:08:45 - No better "test_total_acc" has been achieved for 34 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:41:42 - 0:08:45 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch34.pth
+INFO - 07/28/23 16:41:42 - 0:08:45 - ============ End of epoch 34 ============
+INFO - 07/28/23 16:41:42 - 0:08:45 - 
+                                     ============ Starting epoch 35 ... ============
+INFO - 07/28/23 16:41:45 - 0:08:47 -    1760 -  cross_entropy: 2.23 LR: 1.0000e-04
+INFO - 07/28/23 16:41:49 - 0:08:52 -    1780 -  cross_entropy: 2.23 LR: 1.0000e-04
+INFO - 07/28/23 16:41:53 - 0:08:56 -    1800 -  cross_entropy: 2.23 LR: 1.0000e-04
+INFO - 07/28/23 16:41:53 - 0:08:56 - ****************Test of epoch 35 :****************
+INFO - 07/28/23 16:41:56 - 0:08:59 - trainset   - xe_loss: 885.911067276001, acc_single:18.41 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:57 - 0:08:59 - testset    - xe_loss: 928.3099443626404, acc_single:12.40 %, acc_total: 0.00 %
+INFO - 07/28/23 16:41:57 - 0:08:59 - No better "test_total_acc" has been achieved for 35 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:41:57 - 0:08:59 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch35.pth
+INFO - 07/28/23 16:41:57 - 0:09:00 - ============ End of epoch 35 ============
+INFO - 07/28/23 16:41:57 - 0:09:00 - 
+                                     ============ Starting epoch 36 ... ============
+INFO - 07/28/23 16:42:01 - 0:09:04 -    1820 -  cross_entropy: 2.22 LR: 1.0000e-04
+INFO - 07/28/23 16:42:06 - 0:09:09 -    1840 -  cross_entropy: 2.22 LR: 1.0000e-04
+INFO - 07/28/23 16:42:08 - 0:09:11 - ****************Test of epoch 36 :****************
+INFO - 07/28/23 16:42:11 - 0:09:14 - trainset   - xe_loss: 884.392532787323, acc_single:18.64 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:11 - 0:09:14 - testset    - xe_loss: 930.9349368286133, acc_single:12.21 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:11 - 0:09:14 - No better "test_total_acc" has been achieved for 36 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:42:11 - 0:09:14 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch36.pth
+INFO - 07/28/23 16:42:12 - 0:09:15 - ============ End of epoch 36 ============
+INFO - 07/28/23 16:42:12 - 0:09:15 - 
+                                     ============ Starting epoch 37 ... ============
+INFO - 07/28/23 16:42:14 - 0:09:17 -    1860 -  cross_entropy: 2.20 LR: 1.0000e-04
+INFO - 07/28/23 16:42:18 - 0:09:21 -    1880 -  cross_entropy: 2.21 LR: 1.0000e-04
+INFO - 07/28/23 16:42:23 - 0:09:26 -    1900 -  cross_entropy: 2.22 LR: 1.0000e-04
+INFO - 07/28/23 16:42:23 - 0:09:26 - ****************Test of epoch 37 :****************
+INFO - 07/28/23 16:42:25 - 0:09:28 - trainset   - xe_loss: 878.0580601024627, acc_single:19.65 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:26 - 0:09:29 - testset    - xe_loss: 931.712820444107, acc_single:12.32 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:26 - 0:09:29 - No better "test_total_acc" has been achieved for 37 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:42:26 - 0:09:29 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch37.pth
+INFO - 07/28/23 16:42:27 - 0:09:30 - ============ End of epoch 37 ============
+INFO - 07/28/23 16:42:27 - 0:09:30 - 
+                                     ============ Starting epoch 38 ... ============
+INFO - 07/28/23 16:42:31 - 0:09:34 -    1920 -  cross_entropy: 2.19 LR: 1.0000e-04
+INFO - 07/28/23 16:42:36 - 0:09:39 -    1940 -  cross_entropy: 2.20 LR: 1.0000e-04
+INFO - 07/28/23 16:42:38 - 0:09:41 - ****************Test of epoch 38 :****************
+INFO - 07/28/23 16:42:41 - 0:09:44 - trainset   - xe_loss: 875.4138011455536, acc_single:19.82 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:42 - 0:09:45 - testset    - xe_loss: 935.511336479187, acc_single:12.25 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:42 - 0:09:45 - No better "test_total_acc" has been achieved for 38 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:42:42 - 0:09:45 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch38.pth
+INFO - 07/28/23 16:42:42 - 0:09:45 - ============ End of epoch 38 ============
+INFO - 07/28/23 16:42:42 - 0:09:45 - 
+                                     ============ Starting epoch 39 ... ============
+INFO - 07/28/23 16:42:44 - 0:09:47 -    1960 -  cross_entropy: 2.18 LR: 1.0000e-04
+INFO - 07/28/23 16:42:49 - 0:09:52 -    1980 -  cross_entropy: 2.19 LR: 1.0000e-04
+INFO - 07/28/23 16:42:53 - 0:09:56 -    2000 -  cross_entropy: 2.20 LR: 1.0000e-04
+INFO - 07/28/23 16:42:53 - 0:09:56 - ****************Test of epoch 39 :****************
+INFO - 07/28/23 16:42:56 - 0:09:59 - trainset   - xe_loss: 869.340699558258, acc_single:20.71 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:57 - 0:10:00 - testset    - xe_loss: 938.9120250988007, acc_single:12.35 %, acc_total: 0.00 %
+INFO - 07/28/23 16:42:57 - 0:10:00 - No better "test_total_acc" has been achieved for 39 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:42:57 - 0:10:00 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch39.pth
+INFO - 07/28/23 16:42:57 - 0:10:00 - ============ End of epoch 39 ============
+INFO - 07/28/23 16:42:57 - 0:10:00 - 
+                                     ============ Starting epoch 40 ... ============
+INFO - 07/28/23 16:43:01 - 0:10:04 -    2020 -  cross_entropy: 2.16 LR: 1.0000e-04
+INFO - 07/28/23 16:43:06 - 0:10:09 -    2040 -  cross_entropy: 2.17 LR: 1.0000e-04
+INFO - 07/28/23 16:43:08 - 0:10:11 - ****************Test of epoch 40 :****************
+INFO - 07/28/23 16:43:11 - 0:10:13 - trainset   - xe_loss: 857.7554503250122, acc_single:22.41 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:11 - 0:10:14 - testset    - xe_loss: 935.0628341388702, acc_single:13.11 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:11 - 0:10:14 - No better "test_total_acc" has been achieved for 40 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:43:11 - 0:10:14 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch40.pth
+INFO - 07/28/23 16:43:12 - 0:10:15 - ============ End of epoch 40 ============
+INFO - 07/28/23 16:43:12 - 0:10:15 - 
+                                     ============ Starting epoch 41 ... ============
+INFO - 07/28/23 16:43:14 - 0:10:17 -    2060 -  cross_entropy: 2.14 LR: 1.0000e-04
+INFO - 07/28/23 16:43:18 - 0:10:21 -    2080 -  cross_entropy: 2.15 LR: 1.0000e-04
+INFO - 07/28/23 16:43:23 - 0:10:26 -    2100 -  cross_entropy: 2.15 LR: 1.0000e-04
+INFO - 07/28/23 16:43:23 - 0:10:26 - ****************Test of epoch 41 :****************
+INFO - 07/28/23 16:43:25 - 0:10:28 - trainset   - xe_loss: 853.545224905014, acc_single:22.42 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:26 - 0:10:29 - testset    - xe_loss: 942.8992097187042, acc_single:12.99 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:26 - 0:10:29 - No better "test_total_acc" has been achieved for 41 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:43:26 - 0:10:29 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch41.pth
+INFO - 07/28/23 16:43:27 - 0:10:30 - ============ End of epoch 41 ============
+INFO - 07/28/23 16:43:27 - 0:10:30 - 
+                                     ============ Starting epoch 42 ... ============
+INFO - 07/28/23 16:43:31 - 0:10:34 -    2120 -  cross_entropy: 2.14 LR: 1.0000e-04
+INFO - 07/28/23 16:43:35 - 0:10:38 -    2140 -  cross_entropy: 2.12 LR: 1.0000e-04
+INFO - 07/28/23 16:43:37 - 0:10:40 - ****************Test of epoch 42 :****************
+INFO - 07/28/23 16:43:40 - 0:10:43 - trainset   - xe_loss: 837.0365000152588, acc_single:24.69 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:41 - 0:10:44 - testset    - xe_loss: 936.7377071380615, acc_single:13.66 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:41 - 0:10:44 - No better "test_total_acc" has been achieved for 42 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:43:41 - 0:10:44 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch42.pth
+INFO - 07/28/23 16:43:42 - 0:10:44 - ============ End of epoch 42 ============
+INFO - 07/28/23 16:43:42 - 0:10:44 - 
+                                     ============ Starting epoch 43 ... ============
+INFO - 07/28/23 16:43:44 - 0:10:47 -    2160 -  cross_entropy: 2.10 LR: 1.0000e-04
+INFO - 07/28/23 16:43:48 - 0:10:51 -    2180 -  cross_entropy: 2.11 LR: 1.0000e-04
+INFO - 07/28/23 16:43:53 - 0:10:56 -    2200 -  cross_entropy: 2.10 LR: 1.0000e-04
+INFO - 07/28/23 16:43:53 - 0:10:56 - ****************Test of epoch 43 :****************
+INFO - 07/28/23 16:43:55 - 0:10:58 - trainset   - xe_loss: 825.0821510124207, acc_single:25.98 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:56 - 0:10:59 - testset    - xe_loss: 935.9935915088654, acc_single:14.49 %, acc_total: 0.00 %
+INFO - 07/28/23 16:43:56 - 0:10:59 - No better "test_total_acc" has been achieved for 43 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:43:56 - 0:10:59 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch43.pth
+INFO - 07/28/23 16:43:57 - 0:11:00 - ============ End of epoch 43 ============
+INFO - 07/28/23 16:43:57 - 0:11:00 - 
+                                     ============ Starting epoch 44 ... ============
+INFO - 07/28/23 16:44:01 - 0:11:04 -    2220 -  cross_entropy: 2.06 LR: 1.0000e-04
+INFO - 07/28/23 16:44:05 - 0:11:08 -    2240 -  cross_entropy: 2.05 LR: 1.0000e-04
+INFO - 07/28/23 16:44:07 - 0:11:10 - ****************Test of epoch 44 :****************
+INFO - 07/28/23 16:44:10 - 0:11:13 - trainset   - xe_loss: 811.2734194660187, acc_single:27.14 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:11 - 0:11:14 - testset    - xe_loss: 932.304131155014, acc_single:15.15 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:11 - 0:11:14 - No better "test_total_acc" has been achieved for 44 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:44:11 - 0:11:14 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch44.pth
+INFO - 07/28/23 16:44:12 - 0:11:14 - ============ End of epoch 44 ============
+INFO - 07/28/23 16:44:12 - 0:11:14 - 
+                                     ============ Starting epoch 45 ... ============
+INFO - 07/28/23 16:44:14 - 0:11:16 -    2260 -  cross_entropy: 2.01 LR: 1.0000e-04
+INFO - 07/28/23 16:44:18 - 0:11:21 -    2280 -  cross_entropy: 2.02 LR: 1.0000e-04
+INFO - 07/28/23 16:44:22 - 0:11:25 -    2300 -  cross_entropy: 1.98 LR: 1.0000e-04
+INFO - 07/28/23 16:44:22 - 0:11:25 - ****************Test of epoch 45 :****************
+INFO - 07/28/23 16:44:25 - 0:11:28 - trainset   - xe_loss: 772.1323174619674, acc_single:31.48 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:26 - 0:11:28 - testset    - xe_loss: 899.3936566734315, acc_single:18.88 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:26 - 0:11:28 - No better "test_total_acc" has been achieved for 45 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:44:26 - 0:11:28 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch45.pth
+INFO - 07/28/23 16:44:26 - 0:11:29 - ============ End of epoch 45 ============
+INFO - 07/28/23 16:44:26 - 0:11:29 - 
+                                     ============ Starting epoch 46 ... ============
+INFO - 07/28/23 16:44:30 - 0:11:33 -    2320 -  cross_entropy: 1.88 LR: 1.0000e-04
+INFO - 07/28/23 16:44:35 - 0:11:38 -    2340 -  cross_entropy: 1.80 LR: 1.0000e-04
+INFO - 07/28/23 16:44:37 - 0:11:40 - ****************Test of epoch 46 :****************
+INFO - 07/28/23 16:44:40 - 0:11:43 - trainset   - xe_loss: 641.1092857646942, acc_single:44.62 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:40 - 0:11:43 - testset    - xe_loss: 758.7857809257507, acc_single:33.70 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:40 - 0:11:43 - No better "test_total_acc" has been achieved for 46 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:44:40 - 0:11:43 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch46.pth
+INFO - 07/28/23 16:44:41 - 0:11:44 - ============ End of epoch 46 ============
+INFO - 07/28/23 16:44:41 - 0:11:44 - 
+                                     ============ Starting epoch 47 ... ============
+INFO - 07/28/23 16:44:43 - 0:11:46 -    2360 -  cross_entropy: 1.46 LR: 1.0000e-04
+INFO - 07/28/23 16:44:48 - 0:11:50 -    2380 -  cross_entropy: 0.83 LR: 1.0000e-04
+INFO - 07/28/23 16:44:52 - 0:11:55 -    2400 -  cross_entropy: 0.30 LR: 1.0000e-04
+INFO - 07/28/23 16:44:52 - 0:11:55 - ****************Test of epoch 47 :****************
+INFO - 07/28/23 16:44:55 - 0:11:57 - trainset   - xe_loss: 112.32139589905739, acc_single:90.90 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:55 - 0:11:58 - testset    - xe_loss: 132.29409331083298, acc_single:89.44 %, acc_total: 0.00 %
+INFO - 07/28/23 16:44:55 - 0:11:58 - No better "test_total_acc" has been achieved for 47 / 50 th of the rounds,
+                                     and the optimal result is currently 0.0 %
+INFO - 07/28/23 16:44:55 - 0:11:58 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch47.pth
+INFO - 07/28/23 16:44:56 - 0:11:59 - ============ End of epoch 47 ============
+INFO - 07/28/23 16:44:56 - 0:11:59 - 
+                                     ============ Starting epoch 48 ... ============
+INFO - 07/28/23 16:45:00 - 0:12:03 -    2420 -  cross_entropy: 0.06 LR: 1.0000e-04
+INFO - 07/28/23 16:45:04 - 0:12:07 -    2440 -  cross_entropy: 0.01 LR: 1.0000e-04
+INFO - 07/28/23 16:45:07 - 0:12:09 - ****************Test of epoch 48 :****************
+INFO - 07/28/23 16:45:09 - 0:12:12 - trainset   - xe_loss: 2.0561026788689194, acc_single:99.88 %, acc_total: 55.87 %
+INFO - 07/28/23 16:45:10 - 0:12:13 - testset    - xe_loss: 2.5269987849518656, acc_single:99.83 %, acc_total: 43.00 %
+INFO - 07/28/23 16:45:10 - 0:12:13 - Best "test_total_acc" update for: 43.00 %
+INFO - 07/28/23 16:45:10 - 0:12:13 - Saving the best model in ./dumped/transpose/91ioh0ipoi/best_total_acc.pth
+INFO - 07/28/23 16:45:11 - 0:12:14 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch48.pth
+INFO - 07/28/23 16:45:11 - 0:12:14 - ============ End of epoch 48 ============
+INFO - 07/28/23 16:45:11 - 0:12:14 - 
+                                     ============ Starting epoch 49 ... ============
+INFO - 07/28/23 16:45:13 - 0:12:16 -    2460 -  cross_entropy: 0.00 LR: 1.0000e-04
+INFO - 07/28/23 16:45:18 - 0:12:21 -    2480 -  cross_entropy: 0.00 LR: 1.0000e-04
+INFO - 07/28/23 16:45:22 - 0:12:25 -    2500 -  cross_entropy: 0.00 LR: 1.0000e-04
+INFO - 07/28/23 16:45:22 - 0:12:25 - ****************Test of epoch 49 :****************
+INFO - 07/28/23 16:45:25 - 0:12:28 - trainset   - xe_loss: 0.1921870318299625, acc_single:100.00 %, acc_total: 100.00 %
+INFO - 07/28/23 16:45:25 - 0:12:28 - testset    - xe_loss: 0.22602389588719235, acc_single:100.00 %, acc_total: 100.00 %
+INFO - 07/28/23 16:45:25 - 0:12:28 - Best "test_total_acc" update for: 100.00 %
+INFO - 07/28/23 16:45:25 - 0:12:28 - Saving the best model in ./dumped/transpose/91ioh0ipoi/best_total_acc.pth
+INFO - 07/28/23 16:45:26 - 0:12:29 - Saving the checkpoint model in ./dumped/transpose/91ioh0ipoi/checkpoint/checkpoint_epoch49.pth
+INFO - 07/28/23 16:45:27 - 0:12:30 - ============ End of epoch 49 ============
+INFO - 07/28/23 16:45:27 - 0:12:30 - Evaluation metric achieved 100.00 % with early exit.
+INFO - 07/28/23 16:45:27 - 0:12:30 - 
+                                     ****************Testing on a matrix dataset of additional ranks****************
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_20_20_vd45x ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_19_19_mxyni ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_18_18_jtkz0 ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_17_17_v6nyk ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_16_16_6xari ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_15_15_agwcw ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_14_14_48kuw ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_13_13_gfemn ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_12_12_sv30k ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_11_11_l6jao ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loading data from /public/home/pengwei2022/workspace/_matrix_deep/_diagonal_position_encoding/dataset/TRA/1000_10_10_vtbu7 ...
+INFO - 07/28/23 16:45:27 - 0:12:30 - Loaded 1000 data from the disk.
+INFO - 07/28/23 16:45:30 - 0:12:33 - rank_20_20 - xe_loss: 0.19895440538832918, acc_single:100.00 %, acc_total: 100.00 %
+INFO - 07/28/23 16:45:33 - 0:12:36 - rank_19_19 - xe_loss: 3528.1339769592287, acc_single:10.37 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:36 - 0:12:39 - rank_18_18 - xe_loss: 3060.985296821594, acc_single:10.24 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:38 - 0:12:41 - rank_17_17 - xe_loss: 2634.885689163208, acc_single:10.97 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:40 - 0:12:43 - rank_16_16 - xe_loss: 2289.4142932281493, acc_single:10.56 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:42 - 0:12:45 - rank_15_15 - xe_loss: 1963.6477442321777, acc_single:10.54 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:44 - 0:12:47 - rank_14_14 - xe_loss: 1660.7962446136476, acc_single:11.39 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:45 - 0:12:48 - rank_13_13 - xe_loss: 1411.6421652984618, acc_single:12.99 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:46 - 0:12:49 - rank_12_12 - xe_loss: 1199.840951461792, acc_single:11.69 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:47 - 0:12:50 - rank_11_11 - xe_loss: 996.2032649688721, acc_single:11.66 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:48 - 0:12:51 - rank_10_10 - xe_loss: 827.7493967666626, acc_single:11.33 %, acc_total: 0.00 %
+INFO - 07/28/23 16:45:48 - 0:12:51 - Running complete.
