@@ -24,4 +24,5 @@ options of "sort_method":
  - c-SMD: counter-Diagonal-based sorting (ours)
 
 Cite Information:
+
 Peng, W., Wang, Y. & Wu, M. Enhanced matrix inference with Seq2seq models via diagonal sorting. Sci Rep 14, 883 (2024). https://doi.org/10.1038/s41598-023-50919-2
