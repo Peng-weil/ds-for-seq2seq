@@ -1,4 +1,4 @@
-This is the code repository for the paper "Diagonal Sorting for Seq2seq Models: Enhancing Inference Performance on Matrices".
+This is the code repository for the paper "Enhanced matrix inference with Seq2seq models via diagonal sorting.
 
 You can generate the dataset using the code below dataset or download it from [Google Cloud Drive](https://drive.google.com/file/d/1r9OVIqI5fz7m2cI5fT9DoVTW1Oe0VZl6/view?usp=drive_link).
 
@@ -22,3 +22,5 @@ options of "sort_method":
  - SMC: Column-based sorting
  - SMD: Diagonal-based sorting (ours)
  - c-SMD: counter-Diagonal-based sorting (ours)
+
+
